@@ -1,0 +1,60 @@
+name: hi-ckev-in-servant-server
+version: 0.1.0
+synopsis: I serve everything from hi.ckev.in
+description: Please see README.md
+maintainer: Kevin Chen <k_@berkeley.edu>
+license: Apache
+github: zchn/hi-ckev-in-servant
+category: Web
+
+ghc-options: -Wall -Werror
+default-extensions:
+  - NoImplicitPrelude
+  - OverloadedStrings
+  - RecordWildCards
+
+dependencies:
+  - base >= 4.9 && < 5
+  - protolude
+
+library:
+  source-dirs: src
+  dependencies:
+    - hi-ckev-in-servant-api
+    - aeson
+    - bytestring
+    - exceptions
+    - http-media
+    - http-types
+    - logging-effect
+    - mtl
+    - optparse-applicative
+    - prometheus-client
+    - prometheus-metrics-ghc
+    - servant-server
+    - time
+    - wai
+    - wai-extra
+    - wai-middleware-prometheus
+    - warp
+    - wl-pprint-text
+
+executables:
+  hi-ckev-in-servant:
+    main: Main.hs
+    source-dirs: cmd
+    dependencies:
+      - hi-ckev-in-servant-server
+
+tests:
+  hi-ckev-in-servant-server-tests:
+    main: Main.hs
+    source-dirs: tests
+    dependencies:
+      - hi-ckev-in-servant-api
+      - hi-ckev-in-servant-server
+      - logging-effect
+      - QuickCheck
+      - servant-quickcheck
+      - tasty
+      - tasty-hspec
