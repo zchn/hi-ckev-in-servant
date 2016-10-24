@@ -7,4 +7,3 @@ packages:
 extra-deps:
   - logging-effect-1.1.0
   - servant-quickcheck-0.0.2.1
-  - hindent-5.2.1
