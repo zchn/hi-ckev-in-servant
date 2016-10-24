@@ -18,5 +18,5 @@ test:
     - stack --no-terminal build --test
     - stack --no-terminal test
     - stack --no-terminal install hindent>5.0.0
-    - ln -s ~/.local/bin ~/bin/
+    - ln -s ~/.local/bin/hindent ~/bin/
     - ./scripts/hindent-everything && git diff --exit-code
