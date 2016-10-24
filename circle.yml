@@ -17,4 +17,6 @@ test:
   override:
     - stack --no-terminal build --test
     - stack --no-terminal test
-    # - ./scripts/hindent-everything && git diff --exit-code
+    - stack --no-terminal install hindent-5.2.1 haskell-src-exts-1.18.2
+    - ln -s ~/.local/bin/hindent ~/bin/
+    - ./scripts/hindent-everything && git diff --exit-code
