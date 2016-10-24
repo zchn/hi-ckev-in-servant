@@ -18,4 +18,4 @@ test:
     - stack --no-terminal build --test
     - stack --no-terminal test
     - stack --no-terminal install hindent
-    - ./scripts/hindent-everything && git diff --exit-code
+    - PATH=~/.local/bin:$PATH ./scripts/hindent-everything && git diff --exit-code
