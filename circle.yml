@@ -17,5 +17,5 @@ test:
   override:
     - stack --no-terminal build --test
     - stack --no-terminal test
-    - stack --no-terminal install hindent
+    - stack --no-terminal install hindent>5.0.0
     - PATH=~/.local/bin:$PATH ./scripts/hindent-everything && git diff --exit-code
